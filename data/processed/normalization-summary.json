@@ -1,0 +1,28 @@
+{
+  "run_date": "2026-07-05",
+  "window_weeks": 10,
+  "total_raw_reviews": 8400,
+  "after_date_filter": 8252,
+  "after_pii_sanitization": 8252,
+  "after_content_filters": 1626,
+  "llm_corpus_cap": 1000,
+  "llm_corpus_count": 1000,
+  "per_platform": {
+    "appstore": 0,
+    "playstore": 1626
+  },
+  "star_distribution": {
+    "1": 613,
+    "2": 94,
+    "3": 96,
+    "4": 149,
+    "5": 674
+  },
+  "llm_strata_distribution": {
+    "1": 561,
+    "2": 94,
+    "3": 96,
+    "4": 149,
+    "5": 100
+  }
+}

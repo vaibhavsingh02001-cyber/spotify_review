@@ -373,15 +373,15 @@ Generate a `normalization-summary.json` with:
 
 | # | Criterion | Status |
 | :---: | :--- | :---: |
-| 1 | Raw exports stored in `data/raw/` with platform + date naming | ⬜ |
-| 2 | `normalized-reviews.json` exists with canonical schema | ⬜ |
-| 3 | Date window filter applied; count logged before/after | ⬜ |
-| 4 | PII sanitization applied; no emails, handles, phones, or IDs in output | ⬜ |
-| 5 | Content filters applied (min words, language, emoji strip) | ⬜ |
-| 6 | `reviews-for-llm.json` exists with ≤ 1,000 reviews | ⬜ |
-| 7 | `normalization-summary.json` with complete stats | ⬜ |
-| 8 | No PII in any processed artifact (spot-check verified) | ⬜ |
-| 9 | Source URLs and export dates documented | ⬜ |
+| 1 | Raw exports stored in `data/raw/` with platform + date naming | ✅ |
+| 2 | `normalized-reviews.json` exists with canonical schema | ✅ |
+| 3 | Date window filter applied; count logged before/after | ✅ |
+| 4 | PII sanitization applied; no emails, handles, phones, or IDs in output | ✅ |
+| 5 | Content filters applied (min words, language, emoji strip) | ✅ |
+| 6 | `reviews-for-llm.json` exists with ≤ 1,000 reviews | ✅ |
+| 7 | `normalization-summary.json` with complete stats | ✅ |
+| 8 | No PII in any processed artifact (spot-check verified) | ✅ |
+| 9 | Source URLs and export dates documented | ✅ |
 
 ### Risks & Mitigations
 
