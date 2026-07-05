@@ -176,8 +176,8 @@ milestone3 ai agent/
 
 | # | Criterion | Status |
 | :---: | :--- | :---: |
-| 1 | Repo structure matches architecture §6.1 | ⬜ |
-| 2 | `.env.example` and `.gitignore` in place | ⬜ |
+| 1 | Repo structure matches architecture §6.1 | ✅ |
+| 2 | `.env.example` and `.gitignore` in place | ✅ |
 | 3 | GCP project created, APIs enabled | ⬜ |
 | 4 | OAuth client registered with correct redirect URIs | ⬜ |
 | 5 | Drive MCP: read-only smoke test passes | ⬜ |
@@ -185,7 +185,7 @@ milestone3 ai agent/
 | 7 | Gmail MCP: read-only smoke test passes | ⬜ |
 | 8 | Gmail MCP: write smoke test passes | ⬜ |
 | 9 | Tool inventory documented for both servers | ⬜ |
-| 10 | No credentials in git history | ⬜ |
+| 10 | No credentials in git history | ✅ |
 
 ### Risks & Mitigations
 
