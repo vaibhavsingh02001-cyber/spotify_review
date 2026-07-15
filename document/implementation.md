@@ -225,7 +225,7 @@ Downstream theming and quotes are only as good as normalized input. PII must be 
 - Platform-specific → unified schema mapping
 - Date window filtering (8–12 weeks, default 10)
 - PII detection and redaction on review text
-- Content quality filters (min words, language, emoji strip)
+- Content quality filters (min words, language, emoji exclusion)
 - Volume and date-range reporting per platform
 - LLM corpus cap selection (≤ 1,000 reviews)
 
@@ -321,8 +321,8 @@ Apply redaction rules from [architecture.md §9.1](file:///c:/Users/Vaibhav%20Si
 
 | Filter | Rule | Rationale |
 | :--- | :--- | :--- |
-| Minimum word count | Drop reviews with **≤ 6 words** in title + text (keep ≥ 7) | Too short for meaningful theming |
-| Emoji stripping | Strip all emoji characters from title and text | Cleaner text for LLM processing |
+| Minimum word count | Drop reviews with **< 8 words** in title + text (keep ≥ 8) | Too short for meaningful theming |
+| Emoji exclusion | Drop reviews containing any emoji characters | Cleaner text for LLM processing |
 | Language filter | Keep **English only**; remove Hindi and other languages | Consistent LLM analysis language |
 
 ---
@@ -377,7 +377,7 @@ Generate a `normalization-summary.json` with:
 | 2 | `normalized-reviews.json` exists with canonical schema | ✅ |
 | 3 | Date window filter applied; count logged before/after | ✅ |
 | 4 | PII sanitization applied; no emails, handles, phones, or IDs in output | ✅ |
-| 5 | Content filters applied (min words, language, emoji strip) | ✅ |
+| 5 | Content filters applied (min words, language, emoji exclusion) | ✅ |
 | 6 | `reviews-for-llm.json` exists with ≤ 1,000 reviews | ✅ |
 | 7 | `normalization-summary.json` with complete stats | ✅ |
 | 8 | No PII in any processed artifact (spot-check verified) | ✅ |
@@ -591,15 +591,15 @@ Following the fixed format from [architecture.md §11](file:///c:/Users/Vaibhav%
 
 | # | Criterion | Status |
 | :---: | :--- | :---: |
-| 1 | Stratified sample of ~120 reviews prepared | ⬜ |
-| 2 | LLM Call 1 returns valid `themes.json` with ≤ 5 themes | ⬜ |
-| 3 | LLM Call 2 returns formatted pulse markdown | ⬜ |
-| 4 | Pulse is ≤ 250 words | ⬜ |
-| 5 | Pulse contains exactly 3 themes, 3 quotes, 3 actions | ⬜ |
-| 6 | No PII in pulse (post-generation scan passes) | ⬜ |
-| 7 | Quotes are verbatim from reviews (not invented) | ⬜ |
-| 8 | `weekly-pulse-YYYY-MM-DD.md` saved in `output/` | ⬜ |
-| 9 | Total Groq API calls = exactly 2 | ⬜ |
+| 1 | Stratified sample of ~120 reviews prepared | ✅ |
+| 2 | LLM Call 1 returns valid `themes.json` with ≤ 5 themes | ✅ |
+| 3 | LLM Call 2 returns formatted pulse markdown | ✅ |
+| 4 | Pulse is ≤ 250 words | ✅ |
+| 5 | Pulse contains exactly 3 themes, 3 quotes, 3 actions | ✅ |
+| 6 | No PII in pulse (post-generation scan passes) | ✅ |
+| 7 | Quotes are verbatim from reviews (not invented) | ✅ |
+| 8 | `weekly-pulse-YYYY-MM-DD.md` saved in `output/` | ✅ |
+| 9 | Total Groq API calls = exactly 2 | ✅ |
 | 10 | Operator approves pulse content | ⬜ |
 
 ### Risks & Mitigations

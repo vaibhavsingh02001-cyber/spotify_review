@@ -1,28 +1,28 @@
 {
-  "run_date": "2026-07-05",
-  "window_weeks": 12,
+  "run_date": "2026-07-14",
+  "window_weeks": 10,
   "total_raw_reviews": 10000,
-  "after_date_filter": 9836,
-  "after_pii_sanitization": 9836,
-  "after_content_filters": 1941,
+  "after_date_filter": 8270,
+  "after_pii_sanitization": 8270,
+  "after_content_filters": 1346,
   "llm_corpus_cap": 1000,
   "llm_corpus_count": 1000,
   "per_platform": {
     "appstore": 0,
-    "playstore": 1941
+    "playstore": 1346
   },
   "star_distribution": {
-    "1": 733,
-    "2": 109,
-    "3": 111,
-    "4": 179,
-    "5": 809
+    "1": 539,
+    "2": 80,
+    "3": 92,
+    "4": 130,
+    "5": 505
   },
   "llm_strata_distribution": {
-    "1": 530,
-    "2": 109,
-    "3": 111,
-    "4": 150,
-    "5": 100
+    "1": 539,
+    "2": 80,
+    "3": 92,
+    "4": 130,
+    "5": 159
   }
 }

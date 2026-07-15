@@ -16,3 +16,12 @@ regex>=2023.0
 python-dotenv>=1.0.0
 python-dateutil>=2.8.0
 
+# ──────────────────────────────────────────────
+# Phase 6 — Google MCP Integration
+# (mirrors dependencies of the deployed MCP Server)
+# https://mcpserver-lopftmp3qyw6maunexx63v.streamlit.app/
+# ──────────────────────────────────────────────
+google-auth>=2.0.0
+google-auth-httplib2>=0.2.0
+google-api-python-client>=2.0.0
+

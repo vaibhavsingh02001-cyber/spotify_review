@@ -184,7 +184,7 @@ flowchart TB
 | 1 | **Ingestion** | Raw CSV/JSON per store | Unified review records | Handles platform-specific column names and formats |
 | 2 | **Date Window Filter** | All normalized reviews | Subset for analysis window | Configurable 8–12 weeks; logs count before/after |
 | 3 | **PII Sanitization** | Review text + metadata | Redacted text | Strips emails, @handles, phone numbers, account IDs |
-| 4 | **Content Filters** | Sanitized reviews | Quality-filtered set | Min word count (≥ 7 words), strip emojis, English-only |
+| 4 | **Content Filters** | Sanitized reviews | Quality-filtered set | Min word count (≥ 8 words), exclude reviews with emojis, English-only |
 | 5 | **Theme Clustering** | Filtered reviews | ≤ 5 theme buckets + assignments | Product-aligned vocabulary (e.g., onboarding, KYC, payments) |
 | 6 | **Theme Ranking** | Theme buckets | Ordered list; top 3 for pulse | Ranked by volume + negative sentiment weight |
 | 7 | **Quote Selection** | Top themes + reviews | 3 short anonymized quotes | Rejected if PII detected; verbatim only |

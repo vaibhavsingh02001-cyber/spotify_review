@@ -65,6 +65,21 @@ def strip_emojis(text: str) -> str:
     return emoji_pattern.sub("", text)
 
 
+def has_emoji(text: str) -> bool:
+    """Check if text contains emojis or high-unicode symbols."""
+    if not text:
+        return False
+    emoji_pattern = re.compile(
+        "["
+        "\U00010000-\U0010ffff"  # High unicode planes
+        "\u2600-\u27BF"          # Misc symbols & dingbats
+        "\u200d"                 # Zero-width joiner
+        "]+", flags=re.UNICODE
+    )
+    return bool(emoji_pattern.search(text))
+
+
+
 def sanitize_pii(text: str) -> str:
     """Redact emails, handles, phone numbers, and account IDs."""
     if not text:
@@ -228,12 +243,15 @@ def process_reviews(playstore_file: Path, appstore_file: Path, cutoff_date: date
                 stats["after_pii_sanitization"] += 1
                 
                 # Content Filters
-                text_no_emoji = strip_emojis(text_clean)
-                title_no_emoji = strip_emojis(title_clean)
+                if has_emoji(text_clean) or has_emoji(title_clean):
+                    continue
                 
-                # Skip if empty/too short after clean
+                text_no_emoji = text_clean
+                title_no_emoji = title_clean
+                
+                # Skip if empty/too short after clean (less than 8 words)
                 combined_len = len(re.findall(r"\b\w+\b", title_no_emoji + " " + text_no_emoji))
-                if combined_len < 7:
+                if combined_len < 8:
                     continue
                     
                 # Language filter
@@ -294,12 +312,15 @@ def process_reviews(playstore_file: Path, appstore_file: Path, cutoff_date: date
                 stats["after_pii_sanitization"] += 1
                 
                 # Content Filters
-                text_no_emoji = strip_emojis(text_clean)
-                title_no_emoji = strip_emojis(title_clean)
+                if has_emoji(text_clean) or has_emoji(title_clean):
+                    continue
                 
-                # Skip if empty/too short after clean
+                text_no_emoji = text_clean
+                title_no_emoji = title_clean
+                
+                # Skip if empty/too short after clean (less than 8 words)
                 combined_len = len(re.findall(r"\b\w+\b", title_no_emoji + " " + text_no_emoji))
-                if combined_len < 7:
+                if combined_len < 8:
                     continue
                     
                 # Language filter

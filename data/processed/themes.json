@@ -1,0 +1,59 @@
+{
+  "themes": [
+    {
+      "theme_name": "High Brokerage Charges",
+      "description": "Many users have expressed dissatisfaction with the high brokerage charges levied by the app, which they feel eats into their profits. Some have even compared it unfavorably with other platforms like Zerodha. The charges are particularly felt by small investors who trade in smaller amounts.",
+      "review_count": 120,
+      "sentiment": "negative",
+      "sample_quotes": [
+        "high brokerage fees....more than half the profit we make...ridiculous",
+        "Brokerage is too High compared to other apps",
+        "i usually trade for 5000 to 10000 my profit most of the time goes as trading fee"
+      ]
+    },
+    {
+      "theme_name": "App Performance Issues",
+      "description": "Several users have reported issues with the app's performance, including lagging, freezing, and failure to load pages. This has resulted in missed trading opportunities and frustration for the users. Some have also reported issues with the app's interface, including poor design and difficulty in navigating.",
+      "review_count": 100,
+      "sentiment": "negative",
+      "sample_quotes": [
+        "worst experience the charts don't load on time order get placed at different price",
+        "Last few months this app is unusable. every time page fail to load page fail to load even when there is good internet connection.",
+        "chart loading is poor also giving limited number of candle for past data analysis"
+      ]
+    },
+    {
+      "theme_name": "Poor Customer Support",
+      "description": "Some users have reported difficulty in getting help from the app's customer support team, including unresponsive chat support and unhelpful customer care agents. This has led to frustration and a sense of being abandoned by the app.",
+      "review_count": 50,
+      "sentiment": "negative",
+      "sample_quotes": [
+        "Very first time I wanted to connect to Grow Customer Care through chat as well as call but as expected there is no such a thing exists",
+        "customer service is so poor?in an emergency , if I call the agent don't answer for hours",
+        "please make a separate tab for etf dnt add them in stock..no response from customer care"
+      ]
+    },
+    {
+      "theme_name": "Missing Features",
+      "description": "Some users have reported that the app is missing certain features that they need, such as the ability to change the index in scalper mode, or the ability to view open interest data. This has led to frustration and a sense of being limited by the app.",
+      "review_count": 40,
+      "sentiment": "mixed",
+      "sample_quotes": [
+        "one of the worst app in stock market the charts are worst ... the charges are like crazy",
+        "stop loss never work and they loot your money and never give back if you reach customer care",
+        "nice application one thing need to update,open interest and change of open interest."
+      ]
+    },
+    {
+      "theme_name": "Ease of Use",
+      "description": "Many users have praised the app for its ease of use, citing its simple and intuitive interface. This has made it easy for new users to get started with trading and investing.",
+      "review_count": 80,
+      "sentiment": "positive",
+      "sample_quotes": [
+        "user experience is very good, and easy to understand",
+        "Application so Easy to use, interface is Good, All Details clean and proceed smooth.",
+        "nice application for begginers , with simple home page , suggestion ."
+      ]
+    }
+  ]
+}

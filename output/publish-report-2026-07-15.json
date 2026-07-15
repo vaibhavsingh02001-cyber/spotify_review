@@ -1,0 +1,20 @@
+{
+  "run_date": "2026-07-15",
+  "mcp_server_url": "https://mcpserver-lopftmp3qyw6maunexx63v.streamlit.app/",
+  "pulse_file": "C:\\Users\\Vaibhav Singh\\Documents\\milestone3 ai agent\\output\\weekly-pulse-2026-07-15.md",
+  "pulse_word_count": 177,
+  "pii_scan": "passed",
+  "doc_title": "Weekly Review Pulse - 2026-07-15",
+  "doc_id": "1sRUdxTadq7f53IkQZxcKh5lrlFc8WtcMVEiHtQvFUa8",
+  "doc_url": "https://docs.google.com/document/d/1sRUdxTadq7f53IkQZxcKh5lrlFc8WtcMVEiHtQvFUa8/edit?usp=drivesdk",
+  "draft_id": "r-1468994984737318930",
+  "draft_recipient": "vaibhavsingh02001@gmail.com",
+  "draft_subject": "Weekly Review Pulse - 2026-07-15",
+  "tools_called": [
+    "search_documents",
+    "(skipped - existing doc)",
+    "(skipped - existing doc)",
+    "create_gmail_draft"
+  ],
+  "status": "success"
+}

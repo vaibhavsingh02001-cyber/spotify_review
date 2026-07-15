@@ -1,4 +1,4 @@
-# ⚠️ Edge Cases — Weekly Review Pulse AI Agent (MCP)
+impl# ⚠️ Edge Cases — Weekly Review Pulse AI Agent (MCP)
 
 > **Reference:** [architecture.md](file:///c:/Users/Vaibhav%20Singh/Documents/milestone3%20ai%20agent/document/architecture.md) · [implementation.md](file:///c:/Users/Vaibhav%20Singh/Documents/milestone3%20ai%20agent/document/implementation.md)
 
@@ -72,14 +72,14 @@ This document catalogs edge cases across every stage of the pipeline. Each entry
 
 | # | Edge Case | Risk | Expected Behavior | Mitigation |
 | :---: | :--- | :---: | :--- | :--- |
-| 4.1 | **All reviews filtered out** (all < 7 words, or all non-English) | 🔴 | Abort: "0 reviews after content filters. Cannot generate pulse." | Count check after filtering; abort if 0 |
-| 4.2 | **Review is entirely emoji** ("👍👍👍🔥🔥") | 🟡 | After emoji strip, text is empty → filtered by min-word rule | Emoji strip runs before word count check |
+| 4.1 | **All reviews filtered out** (all < 8 words, containing emojis, or all non-English) | 🔴 | Abort: "0 reviews after content filters. Cannot generate pulse." | Count check after filtering; abort if 0 |
+| 4.2 | **Review contains emojis** | 🟡 | Exclude the review entirely as per user requirements | Emoji check runs and skips review if emojis are present |
 | 4.3 | **Mixed language review** ("Great app, bahut accha hai") | 🟡 | Language detection flags as non-English → filtered out | Accept if > 60% English words; strict mode: filter all mixed |
-| 4.4 | **Review is only a star rating** (no title, no text) | 🟡 | Filtered by min-word rule (0 words < 7 threshold) | Already handled by empty text check in ingestion |
+| 4.4 | **Review is only a star rating** (no title, no text) | 🟡 | Filtered by min-word rule (0 words < 8 threshold) | Already handled by empty text check in ingestion |
 | 4.5 | **Review contains code snippets or URLs** | 🟢 | Keep the review but URLs may trigger PII regex | URL pattern: strip URLs but keep surrounding text |
 | 4.6 | **Spammy/bot reviews** (repetitive text, keyword stuffing) | 🟡 | May create a misleading "spam" theme | Dedup identical text; optionally flag reviews with > 80% keyword overlap |
 | 4.7 | **Extremely long review** (2,000+ words) | 🟢 | Accept but truncate for LLM input if needed | Cap individual review text at 500 chars for LLM corpus |
-| 4.8 | **Review with only a title, no body text** | 🟡 | Combine title + text for word count; if title alone ≥ 7 words, keep | Concatenate fields before word count check |
+| 4.8 | **Review with only a title, no body text** | 🟡 | Combine title + text for word count; if title alone and text both has no emojis and title ≥ 8 words, keep | Concatenate fields before word count check |
 
 ---
 
