@@ -588,13 +588,23 @@ with tab_reporting:
                 except subprocess.CalledProcessError as err:
                     st.error(f"Generation script failed: {err.stderr}")
                     
+        recipient_email = st.text_input(
+            "Recipient Email (Gmail Draft)",
+            value=os.getenv("OPERATOR_EMAIL", "operator@example.com"),
+            help="Define the operator/recipient who will receive the draft weekly pulse"
+        )
         st.markdown("<br>", unsafe_allow_html=True)
         
         # Step 2: Run publish-pulse.py
         if st.button("📬 Publish to Google Docs & Gmail Draft (Phase 6)", use_container_width=True):
             with st.spinner("Authenticating with Google API & Publishing..."):
                 try:
-                    cmd = [sys.executable, str(ROOT / "scripts" / "publish-pulse.py")]
+                    cmd = [
+                        sys.executable,
+                        str(ROOT / "scripts" / "publish-pulse.py"),
+                        "--recipient",
+                        recipient_email
+                    ]
                     res = subprocess.run(cmd, capture_output=True, text=True, check=True)
                     st.success("Pulse published successfully!")
                     st.code(res.stdout)
